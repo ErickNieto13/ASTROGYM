@@ -1,0 +1,44 @@
+---
+const testimonials = [
+  {
+    profileURL: "gym-femaleinstructor.jpg",
+    author: "Donna Bleaker",
+    age: 31,
+    quote:
+      "Unete al equipo y preparate para el cambio que siempre quiziste, instalaciones y personal de primera. ",
+  },
+  {
+    profileURL: "gym-ropes.jpg",
+    author: "Laura Cross",
+    age: 28,
+    quote:
+      "mejore considerablemente mi estilo de vida desde que decidi incorporarme al entrenamiento. ",
+  },
+  {
+    profileURL: "gym-instructor.jpg",
+    author: "Rogelio Rodriguez",
+    age: 44,
+    quote:
+      "Con nuestras rutinas y equipo de trabajo te brindaremos un plan personalizado segun tus necesidades. ",
+  },
+];
+---
+<section class="py-12">
+  <h1 class="yellowText text-5xl italic uppercase text-center">Antes y Despues</h1>
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    {
+      testimonials.map((profile)=>(
+        <div class="m-4">
+          <img src={'/images/'+profile.profileURL} alt="Testimonial" class="object-cover w-full h-48"/>
+          <div class="yellowBG p-8">
+            <p class="pb-4 font-bold">
+              {profile.quote}
+              </p>
+              <small>{profile.author},{profile.age}</small>
+            </div>
+          </div>
+
+      ))
+    }
+  </div>
+</section>
